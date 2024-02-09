@@ -1,0 +1,15 @@
+.DS_Store
+node_modules
+*.swp
+.vscode
+.idea
+.eslintcache
+
+# Yarn 3 files
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions

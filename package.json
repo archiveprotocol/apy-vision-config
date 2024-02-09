@@ -1,0 +1,27 @@
+{
+  "name": "apy-vision-config",
+  "version": "2.2.1",
+  "description": "Apy Vision Config",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "4.2.0",
+    "@typescript-eslint/eslint-plugin": "6.4.1",
+    "@typescript-eslint/parser": "6.4.1",
+    "eslint": "8.47.0",
+    "eslint-config-prettier": "9.0.0",
+    "eslint-plugin-import": "2.28.1",
+    "eslint-plugin-prettier": "5.0.0",
+    "prettier": "3.0.2",
+    "typescript": "5.1.6"
+  },
+  "engines": {
+    "node": "^20.9.0",
+    "yarn": "3.6.3"
+  },
+  "packageManager": "yarn@3.6.3"
+}
