@@ -15,6 +15,7 @@ export declare enum CHAINID {
     EVMOS = "9001",
     EVMOS_COSMOS = "evmos_9001-2",
     OSMOSIS = "osmosis-1",
+    COSMOSHUB = "cosmoshub-4",
     RONIN = "2020",
     BEACON = "eth2",
     BASE = "84532"

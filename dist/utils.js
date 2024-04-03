@@ -19,6 +19,7 @@ var CHAINID;
     CHAINID["EVMOS"] = "9001";
     CHAINID["EVMOS_COSMOS"] = "evmos_9001-2";
     CHAINID["OSMOSIS"] = "osmosis-1";
+    CHAINID["COSMOSHUB"] = "cosmoshub-4";
     CHAINID["RONIN"] = "2020";
     CHAINID["BEACON"] = "eth2";
     CHAINID["BASE"] = "84532";
