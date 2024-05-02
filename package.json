@@ -1,6 +1,6 @@
 {
   "name": "apy-vision-config",
-  "version": "2.2.3",
+  "version": "2.2.4",
   "description": "Apy Vision Config",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -23,5 +23,9 @@
     "node": "^20.9.0",
     "yarn": "3.6.3"
   },
-  "packageManager": "yarn@3.6.3"
+  "packageManager": "yarn@3.6.3",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "pg": "^8.11.5"
+  }
 }

@@ -20,3 +20,5 @@ export declare enum CHAINID {
     BEACON = "eth2",
     BASE = "84532"
 }
+export declare function getRpcUrlsForChain(chainId: string, requireArchiveNode?: boolean): Promise<string[]>;
+export declare function getRpcUrlsByBlock(chainId: string, blockNumber: number): Promise<string[]>;
