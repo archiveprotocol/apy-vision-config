@@ -1,1 +1,1 @@
-export { CHAINID } from './utils';
+export { CHAINID, getRpcUrlsForChain, getRpcUrlsByBlock } from './utils';
