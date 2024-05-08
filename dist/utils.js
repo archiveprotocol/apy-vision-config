@@ -28,19 +28,22 @@ var CHAINID;
     CHAINID["BASE"] = "84532";
 })(CHAINID || (exports.CHAINID = CHAINID = {}));
 async function getRpcUrlsForChain(chainId, requireArchiveNode = true) {
-    const pool = new pg_1.Pool({
+    const client = new pg_1.Client({
         host: process.env.ARCHIVE_WEB_API_HOST,
         port: process.env.ARCHIVE_WEB_API_PORT,
         user: process.env.ARCHIVE_WEB_API_USER,
         password: process.env.ARCHIVE_WEB_API_PASSWORD,
         database: process.env.ARCHIVE_WEB_API_DATABASE,
+        connectionTimeoutMillis: 5000,
+        idle_in_transaction_session_timeout: 5000
     });
     try {
         const payload = {
             text: 'SELECT * FROM public.rpc WHERE "chainId" = $1 AND "isArchiveNode" = $2',
             values: [chainId, requireArchiveNode],
         };
-        const result = await pool.query(payload);
+        await client.connect();
+        const result = await client.query(payload);
         const rpcs = result.rows;
         if (!rpcs.length) {
             throw new Error(`Chain with ID ${chainId} not found, or no RPCs configured for chain.`);
@@ -55,7 +58,7 @@ async function getRpcUrlsForChain(chainId, requireArchiveNode = true) {
         console.error('Error executing query', err);
     }
     finally {
-        await pool.end();
+        await client.end();
     }
 }
 exports.getRpcUrlsForChain = getRpcUrlsForChain;
