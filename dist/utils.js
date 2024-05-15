@@ -48,10 +48,12 @@ async function getRpcUrlsForChain(chainId, requireArchiveNode = true) {
         if (!rpcs.length) {
             throw new Error(`Chain with ID ${chainId} not found, or no RPCs configured for chain.`);
         }
-        for (let i = rpcs.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [rpcs[i], rpcs[j]] = [rpcs[j], rpcs[i]];
-        }
+        rpcs.sort((a, b) => {
+            if (b.weight === a.weight) {
+                return 0.5 - Math.random();
+            }
+            return b.weight - a.weight;
+        });
         return rpcs.map((rpc) => rpc.url);
     }
     catch (err) {

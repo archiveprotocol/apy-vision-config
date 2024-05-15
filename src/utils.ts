@@ -57,11 +57,13 @@ export async function getRpcUrlsForChain(chainId: string, requireArchiveNode = t
     if (!rpcs.length) {
       throw new Error(`Chain with ID ${chainId} not found, or no RPCs configured for chain.`);
     }
-
-    for (let i = rpcs.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [rpcs[i], rpcs[j]] = [rpcs[j], rpcs[i]];
-    }
+    
+    rpcs.sort((a, b) => {
+      if (b.weight === a.weight) { // When weights are equal, sort randomly
+        return 0.5 - Math.random();
+      }
+      return b.weight - a.weight; // Otherwise, sort by weight descending
+    });
 
     return rpcs.map((rpc) => rpc.url);
   } catch (err) {
