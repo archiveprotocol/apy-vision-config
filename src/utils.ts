@@ -47,8 +47,8 @@ export async function getRpcUrlsForChain(chainId: string, requireArchiveNode = t
 
   try {
     const payload = {
-      text: 'SELECT * FROM public.rpc WHERE "chainId" = $1 AND "isArchiveNode" = $2',
-      values: [chainId, requireArchiveNode],
+      text: 'SELECT * FROM public.rpc WHERE "chainId" = $1 AND "isArchiveNode" = $2 AND "isDisabled" = $3' ,
+      values: [chainId, requireArchiveNode, false],
     };
     await client.connect();
     const result = await client.query(payload);

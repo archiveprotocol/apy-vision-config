@@ -1,6 +1,6 @@
 {
   "name": "apy-vision-config",
-  "version": "2.2.6",
+  "version": "2.2.7",
   "description": "Apy Vision Config",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
