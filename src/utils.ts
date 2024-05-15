@@ -31,7 +31,7 @@ export enum CHAINID {
   COSMOSHUB = '-1061702', // following defi price convention
   RONIN = '2020',
   BEACON = 'eth2',
-  BASE = '84532',
+  BASE = '8453',
 }
 
 export async function getRpcUrlsForChain(chainId: string, requireArchiveNode = true): Promise<string[]> {

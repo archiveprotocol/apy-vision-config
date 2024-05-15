@@ -18,7 +18,7 @@ export declare enum CHAINID {
     COSMOSHUB = "-1061702",
     RONIN = "2020",
     BEACON = "eth2",
-    BASE = "84532"
+    BASE = "8453"
 }
 export declare function getRpcUrlsForChain(chainId: string, requireArchiveNode?: boolean): Promise<string[]>;
 export declare function getRpcUrlsByBlock(chainId: string, blockNumber: number): Promise<string[]>;
