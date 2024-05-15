@@ -1,6 +1,6 @@
 {
   "name": "apy-vision-config",
-  "version": "2.2.5",
+  "version": "2.2.6",
   "description": "Apy Vision Config",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -10,6 +10,7 @@
   "license": "UNLICENSED",
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "4.2.0",
+    "@types/node": "^20.12.12",
     "@typescript-eslint/eslint-plugin": "6.4.1",
     "@typescript-eslint/parser": "6.4.1",
     "eslint": "8.47.0",
