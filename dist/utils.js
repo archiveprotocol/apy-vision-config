@@ -25,7 +25,7 @@ var CHAINID;
     CHAINID["COSMOSHUB"] = "-1061702";
     CHAINID["RONIN"] = "2020";
     CHAINID["BEACON"] = "eth2";
-    CHAINID["BASE"] = "84532";
+    CHAINID["BASE"] = "8453";
 })(CHAINID || (exports.CHAINID = CHAINID = {}));
 async function getRpcUrlsForChain(chainId, requireArchiveNode = true) {
     const client = new pg_1.Client({
